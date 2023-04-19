@@ -1,0 +1,9 @@
+{
+	"name": "poc-salvi",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e148937a-2d91-4232-8fc2-30550a85f1f8",
+		"tenantId": "3a14a650-9ad4-4d14-8b87-0caf5b644ff1"
+	}
+}
