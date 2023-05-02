@@ -27,15 +27,10 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureMySqlSink",
+						"writeBatchSize": 10000,
+						"writeBatchTimeout": "00:00:30",
+						"preCopyScript": "truncate table elgin-sap.tb_cadastroarcondicionado"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -48,9 +43,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ID_PRODUTO",
-									"type": "String",
-									"physicalType": "String"
+									"name": "id_produto",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -60,9 +55,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DESC_PRODUTO",
+									"name": "desc_produto",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -72,9 +67,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VALOR_PRODUTO",
-									"type": "String",
-									"physicalType": "String"
+									"name": "valor_produto",
+									"type": "Decimal",
+									"physicalType": "decimal"
 								}
 							},
 							{
@@ -84,9 +79,9 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DATA_CADASTRO",
-									"type": "String",
-									"physicalType": "String"
+									"name": "data_cadastro",
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							}
 						],
@@ -105,33 +100,10 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "arq_arCond",
+						"referenceName": "TableArCond",
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Table_ArCond",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "ArqArCond",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"enableStaging": false
-				}
 			}
 		],
 		"annotations": []
