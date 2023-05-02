@@ -1,0 +1,17 @@
+{
+	"name": "ProcessoCargaSAP",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 12,
+				"startTime": "2023-05-02T19:41:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
