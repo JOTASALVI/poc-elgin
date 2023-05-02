@@ -1,0 +1,40 @@
+{
+	"name": "TableArCond",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mysqlElgin",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "id_produto",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "desc_produto",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "valor_produto",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 5
+			},
+			{
+				"name": "data_cadastro",
+				"type": "date",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "tb_cadastroarcondcionado"
+		}
+	}
+}
