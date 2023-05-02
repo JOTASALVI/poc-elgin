@@ -13,14 +13,26 @@
 				"fileName": "arq-arcond.csv",
 				"container": "arq-elgin"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "ID_PRODUTO;DESC_PRODUTO;VALOR_PRODUTO;DATA_CADASTRO",
+				"name": "ID_PRODUTO",
+				"type": "String"
+			},
+			{
+				"name": "DESC_PRODUTO",
+				"type": "String"
+			},
+			{
+				"name": "VALOR_PRODUTO",
+				"type": "String"
+			},
+			{
+				"name": "DATA_CADASTRO",
 				"type": "String"
 			}
 		]
