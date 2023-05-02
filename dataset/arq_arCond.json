@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "arq_arCond",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzBlob_TESTE",
